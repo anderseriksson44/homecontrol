@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- Custom styles for this template -->
+    <script type="text/javascript" src="script.js"></script>
+
+    <link href="css/style.css" rel="stylesheet">
+    
+        
+    <title>HomeControl</title>
+
+</head>
+
+<body class="bg-grey">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> 
+                <a class="navbar-brand" href="AEriksson">Home Control</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-right navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Device<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">Lights</a></li>
+                    <li><a href="#">Larm</a></li>
+                    <li><a href="#">Musik</a></li>
+                    <li><a href="#">Kamera</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Inställningar</a></li> 
+                <li><a href="#">Other</a></li> 
+                </ul>
+        </div>
+    </div><!--/.navbar-collapse -->
+     
+</nav> 
+
+        
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <section class="jumbotron">
+      <div class="container">
+        <img src="img/lamp_3.svg" height="200px" width="auto">
+          <h2 class="text-center">Lights</h2>
+          <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#installning" aria-expanded="false" aria-controls="collapseExample">Inställningar &raquo;</a></p>
+            <div class="collapse" id="installning">
+                <button id="add" type="button" class="btn btn-primary btn-md">Add new light</button>
+                <button type="button" class="btn btn-primary btn-md">Set timer for all lights</button>
+                <p></p>
+                <div>
+                    <form>
+                    First name:<br>
+                    <input type="text" name="firstname"><br>
+                    Last name:<br>
+                    <input type="text" name="lastname">
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Dropdown meny for all lights in respecive room -->
+
+<section class="jumbotron">
+      <div class="container"><h1>Ha koll på dina lampor</h1></div>
+        <div id="exTab1" class="container">	
+          <ul  class="nav nav-pills">
+			<li class="active"><a  href="#1a" data-toggle="tab">Vardagsrum</a>
+			</li>
+			<li><a href="#2a" data-toggle="tab">Sovrum</a>
+			</li>
+			<li><a href="#3a" data-toggle="tab">Kök</a>
+			 </li>
+              <li><a href="#4a" data-toggle="tab">Barnrum</a>
+              </li>
+		      <li><a href="#4a" data-toggle="tab">Utebelysning</a>
+			 </li>
+		  </ul>
+
+            <div class="tab-content clearfix">
+                <div class="tab-pane active" id="1a">
+                    <h3>Dina lampor i vardagsrum</h3>
+				    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <h3>Fönster norr</h3>
+                                <div id="rum1" class="rumbox"></div>
+                                <input id="toggle-one" checked type="checkbox" data-onstyle="success" data-offstyle="danger">
+<!--                                <button id="onoff" type="button" class="btn btn-md btn-success">  ON  </button>-->
+                                <hr>
+                                
+                                </div>
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <h3>Fönster söder</h3>
+                                <div id="rum2" class="rumbox"></div>
+                                <button id="onoff" type="button" class="btn btn-md btn-success">  ON  </button>
+<!--                                <button id="onoff" type="button" class="btn btn-md btn-danger">  OFF  </button>-->
+                            </div>
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <h3>Sideboard</h3>
+                                <div class="rumbox"></div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <h3>Taklampa</h3>
+                                <div class="rumbox"></div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="tab-pane" id="2a">
+                    <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+				</div>
+                <div class="tab-pane" id="3a">
+                    <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+				</div>
+                <div class="tab-pane" id="4a">
+                    <h3>We use css to change the background color of the content to be equal to the tab</h3>
+				</div>
+			</div>
+        </div>
+</section>
+
+    
+    
+<!--
+    <div class="container text-center">
+    <h1>Centrerat</h1>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+             <a data-toggle="collapse" href="#vardrum" aria-expanded="false" aria-controls="collapseExample">Vardagsrum</a>
+                <div class="rumbox"></div>
+                    <div class="collapse" id="vardrum">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+            </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="rumbox"></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="rumbox"></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="rumbox"></div>
+        </div>
+            <div class="rumbox"></div>
+            <div class="plusbox"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
+        </div>
+    </div>
+    </div>
+    
+-->
+    
+    
+    
+    
+<!--Drop down menu instead of boxes. Currrently discarded 
+<div class="container-fluid text-center">
+    <h1>Centrerat</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="dropdown inline roomdropdown">
+                    <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vardagsrum <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Fönster-Norr</a></li>
+                    <li><a href="#">Fönster-Norr</a></li>
+                    <li><a href="#">Tavelbelysning</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown inline roomdropdown">
+                <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sovrum <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Fönster</a></li>
+                </ul>
+            </div>
+    
+            <div class="dropdown inline roomdropdown">
+                <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kök <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Fönster</a></li>
+                    <li><a href="#">Diskbänk</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+-->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</body>
+</html>
