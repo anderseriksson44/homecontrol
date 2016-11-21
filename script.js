@@ -20,29 +20,40 @@ $(document).ready(function() {
 $(function() {
       $("#toggle-one").bootstrapToggle(function(){
         $(this).change(function() {
-            $("rum1").addClass("rumbox-light");
+            $("#rum").addClass("rumbox-light");
         });
     });
 });
     
 
+function nyttRum() {
+        alert("Hej");
+//        var node = document.createElement("li");
+//        var textnode = document.createTextNode(text);
+//        node.appendChild(textnode);
+//        document.getElementById("exTab1").appendChild(node);
+};
 
+    
+    
     
 var onoff = document.querySelector("#onoff");
 var lampa = document.querySelector("#rum2");
-
+var tand = true;
+    
 onoff.addEventListener("click", function(){
     lampa.classList.toggle("rumbox-light");
     
-    if (onoff = true) {
+    if (tand == true) {
         this.classList.add("btn-danger");
         this.innerHTML = "OFF";
-        onoff = false;
+        tand = false;
     }
     else {
         this.innerHTML = "ON";
-        onoff.classList.add("btn-warning");
-        onoff = true; 
+        this.classList.toggle("btn-warning");
+        tand = true; 
+        console.log(this.classList);
     }
 
     });    

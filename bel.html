@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <!-- Custom styles for this template -->
-    <script type="text/javascript" src="script.js"></script>
+    
 
     <link href="CSS/style.css" rel="stylesheet">
     
@@ -58,20 +58,20 @@
       <div class="container">
         <img src="img/lamp_3.svg" height="200px" width="auto">
           <h2 class="text-center">Lights</h2>
+          
+          <!-- Hidden menu. Contains :"Add new room", ... -->
           <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#installning" aria-expanded="false" aria-controls="collapseExample">Inställningar &raquo;</a></p>
             <div class="collapse" id="installning">
-                <button id="add" type="button" class="btn btn-primary btn-md">Add new light</button>
-                <button type="button" class="btn btn-primary btn-md">Set timer for all lights</button>
+                
+                <!-- Hidden menu for adding of new room -->
+                <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href="#nyttrum" aria-expanded="false" aria-controls="nyttrum">Lägg till nytt rum</a>
+                    <div class="collapse" id="nyttrum">
+                        <hr><p>Ange namn på rummet</p>
+                        <input type="text" id="rum">                                    <!-- Input form to name the new room -->
+                        <input type="button" onclick="nyttRum()" value="Lägg till rum">   <!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
+                    </div>
+                
                 <p></p>
-                <div>
-                    <form>
-                    First name:<br>
-                    <input type="text" name="firstname"><br>
-                    Last name:<br>
-                    <input type="text" name="lastname">
-                    </form>
-                    
-                </div>
             </div>
         </div>
     </section>
@@ -81,43 +81,66 @@
 
 <section class="jumbotron">
       <div class="container"><h1>Ha koll på dina lampor</h1></div>
-        <div id="exTab1" class="container">	
-          <ul  class="nav nav-pills">
-			<li class="active"><a  href="#1a" data-toggle="tab">Vardagsrum</a>
+
+    <!--Bootstrap: Tab meny for each room -->
+    <div id="tab1" class="container">	
+    
+   <!--Tabs UL-->
+        <ul  id="rumlista" class="nav nav-pills">                              
+		
+  <!--Tabs LI for each room. Currently hardcoded-->
+            <li class="active"><a  href="#1a" data-toggle="tab">Vardagsrum</a>
 			</li>
 			<li><a href="#2a" data-toggle="tab">Sovrum</a>
 			</li>
-			<li><a href="#3a" data-toggle="tab">Kök</a>
+			<li><a href="#3e" data-toggle="tab">Kök</a>
 			 </li>
-              <li><a href="#4a" data-toggle="tab">Barnrum</a>
+              <li><a href="#4e" data-toggle="tab">Barnrum</a>
               </li>
-		      <li><a href="#4a" data-toggle="tab">Utebelysning</a>
+		      <li><a href="#5e" data-toggle="tab">Utebelysning</a>
 			 </li>
 		  </ul>
 
-            <div class="tab-content clearfix">
-                <div class="tab-pane active" id="1a">
+    <!--Bootstrap: Tab meny for each room -->
+        <div class="tab-content clearfix"> 
+            
+            <!-- ROOM 1 -->
+                <div class="tab-pane active" id="1a"> <!--Tab 1. Content. Fade when changing between tabs --> 
                     <h3>Dina lampor i vardagsrum</h3>
 				    <div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-sm-6 text-center">
+                            
+                            <!-- One for each light -->
+                            <div class="col-md-3 col-sm-6 text-center"> 
                                 <h3>Fönster norr</h3>
-                                <div id="rum1" class="rumbox"></div>
-                                <input id="toggle-one" checked type="checkbox" data-onstyle="success" data-offstyle="danger">
+                                <div id="rum" class="rumbox"></div>
+                                
+                                <!-- On/Off toggle button. BootstrapToggle plugin used.  -->
+                                <input id="toggle-one" checked type="checkbox" data-onstyle="success" data-offstyle="danger"> 
 <!--                                <button id="onoff" type="button" class="btn btn-md btn-success">  ON  </button>-->
                                 <hr>
                                 
+                                <!-- Timer -->
+                                <div id="timer">
+                                Timer
                                 </div>
+                            </div>
+                            
+                            <!-- One for each light -->
                             <div class="col-md-3 col-sm-6 text-center">
                                 <h3>Fönster söder</h3>
                                 <div id="rum2" class="rumbox"></div>
                                 <button id="onoff" type="button" class="btn btn-md btn-success">  ON  </button>
 <!--                                <button id="onoff" type="button" class="btn btn-md btn-danger">  OFF  </button>-->
                             </div>
+                            
+                            <!-- One for each light -->
                             <div class="col-md-3 col-sm-6 text-center">
                                 <h3>Sideboard</h3>
                                 <div class="rumbox"></div>
                             </div>
+                            
+                            <!-- One for each light -->
                             <div class="col-md-3 col-sm-6 text-center">
                                 <h3>Taklampa</h3>
                                 <div class="rumbox"></div>
@@ -125,14 +148,20 @@
                         </div>
                     </div> 
                 </div>
-                <div class="tab-pane" id="2a">
-                    <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+                
+                <!-- ROOM 2 -->
+                <div class="tab-pane fade" id="2a">
+                    <h3>Light switches will be added here as well</h3>
 				</div>
-                <div class="tab-pane" id="3a">
-                    <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+                
+                <!-- ROOM 3 -->
+                <div class="tab-pane fade" id="3e">
+                    <h3>Light switches will be added here as well</h3>
 				</div>
-                <div class="tab-pane" id="4a">
-                    <h3>We use css to change the background color of the content to be equal to the tab</h3>
+                
+                <!-- ROOM 4 -->
+                <div class="tab-pane fade" id="4e">
+                    <h3>Light switches will be added here as well</h3>
 				</div>
 			</div>
         </div>
@@ -208,7 +237,8 @@
     </div>
 </div>
     
--->
+--> 
+    <script type="text/javascript" src="script.js"></script>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 

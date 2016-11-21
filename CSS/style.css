@@ -137,7 +137,7 @@ body {
   
 }
 
-#exTab1 .tab-content {
+#tab1 .tab-content {
     color : #646464;
     border: 3px #428bca solid;
     padding : 5px 15px;
@@ -146,9 +146,11 @@ body {
 
 /* remove border radius for the tab */
 
-#exTab1 .nav-pills > li > a {
+/*
+#tab1 .nav-tabs > li > a {
   border-radius: 3px;
 }
+*/
 
     /*Footer */
 
