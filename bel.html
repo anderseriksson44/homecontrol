@@ -5,11 +5,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
     <!-- Custom styles for this template -->
     <script type="text/javascript" src="script.js"></script>
 
@@ -20,10 +22,10 @@
 
 </head>
 
-<body class="bg-grey">
+<body class="lights-bg">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -54,10 +56,10 @@
 
     
       <!-- Main jumbotron for a primary marketing message or call to action -->
-    <section class="jumbotron">
-      <div class="container">
+    <section class="container">
+      <div class="jumbotron">
         <img src="img/lamp_3.svg" height="200px" width="auto">
-          <h2 class="text-center">Lights</h2>
+          <h1 class="text-center">Din belysning</h1>
           
           <!-- Hidden menu. Contains :"Add new room", ... -->
           <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#installning" aria-expanded="false" aria-controls="collapseExample">Inställningar &raquo;</a></p>
@@ -67,11 +69,12 @@
                 <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href="#nyttrum" aria-expanded="false" aria-controls="nyttrum">Lägg till nytt rum</a>
                     <div class="collapse" id="nyttrum">
                         <hr><p>Ange namn på rummet</p>
-                        <input type="text" id="rum">                                    <!-- Input form to name the new room -->
-                        <input type="button" onclick="nyttRum()" value="Lägg till rum">   <!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
+                        <input type="roomname" id="rum">                                    <!-- Input form to name the new room -->
+                        <input id="addroom" type="button" value="Lägg till rum">   <!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
                     </div>
                 
-                <p></p>
+                <p id='result'></p>
+        
             </div>
         </div>
     </section>
@@ -79,167 +82,138 @@
 
 <!-- Dropdown meny for all lights in respecive room -->
 
-<section class="jumbotron">
-      <div class="container"><h1>Ha koll på dina lampor</h1></div>
+<section class="container">
+<!--      <div class="jumbotron"><h1>Ha koll på dina lampor</h1></div>-->
 
     <!--Bootstrap: Tab meny for each room -->
-    <div id="tab1" class="container">	
+    <div id="tab1" class="jumbotron">	
     
    <!--Tabs UL-->
         <ul  id="rumlista" class="nav nav-pills">                              
 		
   <!--Tabs LI for each room. Currently hardcoded-->
-            <li class="active"><a  href="#1a" data-toggle="tab">Vardagsrum</a>
+            <li class="active"><a  href="#R1" data-toggle="tab">Vardagsrum</a>
 			</li>
-			<li><a href="#2a" data-toggle="tab">Sovrum</a>
+			<li><a href="#R2" data-toggle="tab">Sovrum</a>
 			</li>
-			<li><a href="#3e" data-toggle="tab">Kök</a>
+			<li><a href="#R3" data-toggle="tab">Kök</a>
 			 </li>
-              <li><a href="#4e" data-toggle="tab">Barnrum</a>
+              <li><a href="#R4" data-toggle="tab">Barnrum</a>
               </li>
-		      <li><a href="#5e" data-toggle="tab">Utebelysning</a>
+		      <li><a href="#R5" data-toggle="tab">Utebelysning</a>
 			 </li>
 		  </ul>
 
     <!--Bootstrap: Tab meny for each room -->
-        <div class="tab-content clearfix"> 
+        <div id="controlboard" class="tab-content clearfix"> 
             
             <!-- ROOM 1 -->
-                <div class="tab-pane active" id="1a"> <!--Tab 1. Content. Fade when changing between tabs --> 
+                <div id="R1" class="tab-pane active" > <!--Tab 1. Content. Fade when changing between tabs --> 
                     <h3>Dina lampor i vardagsrum</h3>
+                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
 				    <div class="container">
-                        <div class="row">
+                        <div id ="aa" class="room row">
                             
                             <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 text-center"> 
+                            <div id="L1" class="col-md-3 col-sm-6 col-xs-12 own text-center"> 
                                 <h3>Fönster norr</h3>
                                 <div id="rum" class="rumbox"></div>
                                 
                                 <!-- On/Off toggle button. BootstrapToggle plugin used.  -->
-                                <input id="toggle-one" checked type="checkbox" data-onstyle="success" data-offstyle="danger"> 
-<!--                                <button id="onoff" type="button" class="btn btn-md btn-success">  ON  </button>-->
-                                <hr>
-                                
-                                <!-- Timer -->
-                                <div id="timer">
-                                Timer
-                                </div>
+                                <input id="toggle" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">
                             </div>
                             
                             <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 text-center">
+                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
                                 <h3>Fönster söder</h3>
-                                <div id="rum2" class="rumbox"></div>
-                                <button id="onoff" type="button" class="btn btn-md btn-success">  ON  </button>
-<!--                                <button id="onoff" type="button" class="btn btn-md btn-danger">  OFF  </button>-->
+                                <div id="L2" class="rumbox"></div>
+                                
+                                <!-- On/Off toggle button. -->
+                              <!--  <button id="L2" type="button" class="btn btn-md btn-success">  ON  </button> -->
+                            <input id="L2" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">
+ 
                             </div>
                             
                             <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 text-center">
+                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
                                 <h3>Sideboard</h3>
-                                <div class="rumbox"></div>
+                                <div id="L3" class="rumbox"></div>
+                             
+                                <!-- On/Off toggle button. -->
+                               <button id="L3" type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
                             </div>
                             
                             <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 text-center">
+                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
                                 <h3>Taklampa</h3>
-                                <div class="rumbox"></div>
+                                <div id="L4" class="rumbox"></div>
+                               
+                                <!-- On/Off toggle button. --> 
+                               <button id="L4" type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
                             </div>
+                     
                         </div>
                     </div> 
                 </div>
-                
+                            
                 <!-- ROOM 2 -->
-                <div class="tab-pane fade" id="2a">
-                    <h3>Light switches will be added here as well</h3>
+                <div id="R2" class="tab-pane fade">
+                    <h3>Dina lampor i...</h3>
+                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
+                    <!-- One for each light -->
+                    <div class="container">
+                        <div id ="ab" class="room row"></div>
+                    </div>
 				</div>
                 
                 <!-- ROOM 3 -->
-                <div class="tab-pane fade" id="3e">
-                    <h3>Light switches will be added here as well</h3>
+                <div id="R3" class="tab-pane fade">
+                    <h3></h3>
+                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
+                    <!-- One for each light -->
+                            
 				</div>
                 
                 <!-- ROOM 4 -->
-                <div class="tab-pane fade" id="4e">
-                    <h3>Light switches will be added here as well</h3>
+                <div id="R4" class="tab-pane fade">
+                    <h3></h3>
+                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
+                    <!-- One for each light -->
+                            
 				</div>
-			</div>
+                
+                <!-- ROOM 5 -->
+                <div id="R5" class="tab-pane fade">
+                    <h3></h3>
+                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
+                    <!-- One for each light -->
+                            
+				</div> 
+                    <div id="roomaddModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-sm">
+
+                            <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>	
+                    </div>
         </div>
+
+</div>
 </section>
 
-     
-    
-<!--
-    <div class="container text-center">
-    <h1>Centrerat</h1>
-    <div class="row">
-        <div class="col-md-4 col-sm-6">
-             <a data-toggle="collapse" href="#vardrum" aria-expanded="false" aria-controls="collapseExample">Vardagsrum</a>
-                <div class="rumbox"></div>
-                    <div class="collapse" id="vardrum">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-            </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="rumbox"></div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="rumbox"></div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="rumbox"></div>
-        </div>
-            <div class="rumbox"></div>
-            <div class="plusbox"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-        </div>
-    </div>
-    </div>
-    
--->
-    
-    
-    
-    
-<!--Drop down menu instead of boxes. Currrently discarded 
-<div class="container-fluid text-center">
-    <h1>Centrerat</h1>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="dropdown inline roomdropdown">
-                    <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vardagsrum <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Fönster-Norr</a></li>
-                    <li><a href="#">Fönster-Norr</a></li>
-                    <li><a href="#">Tavelbelysning</a></li>
-                </ul>
-            </div>
 
-            <div class="dropdown inline roomdropdown">
-                <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sovrum <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Fönster</a></li>
-                </ul>
-            </div>
-    
-            <div class="dropdown inline roomdropdown">
-                <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kök <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Fönster</a></li>
-                    <li><a href="#">Diskbänk</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-    
--->
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 
 </body>
 </html>
