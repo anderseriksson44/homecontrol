@@ -111,45 +111,72 @@
                 <div id="R1" class="tab-pane active" > <!--Tab 1. Content. Fade when changing between tabs --> 
                     <h3>Dina lampor i vardagsrum</h3>
                     <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+    
+                    <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
+       	                        <form>
+  			                       First name:<br>
+  			                       <input type="text" name="firstname"><br>
+	 		                        <input type="submit" value="Submit your answer">
+ 		                         </form>
+		
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+      
+                        </div>
+                    </div>
 				    <div class="container">
-                        <div id ="aa" class="room row">
+                        <div id="aa" class="room row">
                             
                             <!-- One for each light -->
-                            <div id="L1" class="col-md-3 col-sm-6 col-xs-12 own text-center"> 
+                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center"> 
                                 <h3>Fönster norr</h3>
-                                <div id="rum" class="rumbox"></div>
+                                <div class="lightbox"></div>
                                 
                                 <!-- On/Off toggle button. BootstrapToggle plugin used.  -->
-                                <input id="toggle" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">
+                                <input class="toggleknapp" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">
                             </div>
                             
                             <!-- One for each light -->
                             <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
                                 <h3>Fönster söder</h3>
-                                <div id="L2" class="rumbox"></div>
+                                <div class="lightbox"></div>
                                 
                                 <!-- On/Off toggle button. -->
                               <!--  <button id="L2" type="button" class="btn btn-md btn-success">  ON  </button> -->
-                            <input id="L2" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">
+                            <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
  
                             </div>
                             
                             <!-- One for each light -->
                             <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
                                 <h3>Sideboard</h3>
-                                <div id="L3" class="rumbox"></div>
+                                <div class="lightbox"></div>
                              
                                 <!-- On/Off toggle button. -->
-                               <button id="L3" type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
+                               <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
                             </div>
                             
                             <!-- One for each light -->
                             <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
                                 <h3>Taklampa</h3>
-                                <div id="L4" class="rumbox"></div>
+                                <div class="lightbox"></div>
                                
                                 <!-- On/Off toggle button. --> 
-                               <button id="L4" type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
+                               <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
                             </div>
                      
                         </div>
@@ -158,11 +185,11 @@
                             
                 <!-- ROOM 2 -->
                 <div id="R2" class="tab-pane fade">
-                    <h3>Dina lampor i...</h3>
+                    <h3>Dina lampor i sovrum</h3>
                     <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
                     <!-- One for each light -->
                     <div class="container">
-                        <div id ="ab" class="room row"></div>
+                        <div id="aa" class="room row"></div>
                     </div>
 				</div>
                 
