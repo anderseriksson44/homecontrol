@@ -7,26 +7,25 @@ $(document).ready(function() {
             });
         });
 
-/* jQuery function to to add a new light */
-    var lightcount = 5;
+    
+    
+//* jQuery function to to add a new light */
+    $("#light").keyup(function() {
+        value = $("#light").val();
+        $("#addlight").trigger("reset");
+    });
     $(document).find("#addlight").on("click", function(){
-       
-     
-
-        var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
-        console.log(this);
+        
+        
+            console.log(value);
+            var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><h3>'+value+'</h3><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
         //Add it to the DOM
         $(document).find("div.active").find(".room").append(domElement);
-        console.log(this);        
+        
     }); 
     
-/* jQuery function to to add a new light. TEst to add modal */
-//var lightcount = 5;
-//    $(document).find("#addlight").on("click", function(){
-//    
-//        $("#myModal").modal();
-//    });
-//    
+        
+    
 //        
 //        var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
 //        console.log(this);
@@ -34,7 +33,7 @@ $(document).ready(function() {
 //        $(document).find("div.active").find(".room").append(domElement);
 //        console.log(this);        
 //    });
-
+//
     
 /* Eventlistener for confirmation when adding a new room to the list */
 
@@ -57,12 +56,13 @@ if (roomName.length > 10) {
     ul.appendChild(list);
     
     var atag = document.createElement("a");
-    atag.setAttribute("href", "#6");
+    atag.setAttribute("href", "#"+roomName);
     atag.setAttribute("data-toggle", "tab");
     atag.innerHTML= (roomName);
-    
     list.appendChild(atag);
     
+    var room = document.getElementsByClassName("tab-pane");
+//    var lastdiv = 
     
     }
 }
@@ -71,7 +71,7 @@ if (roomName.length > 10) {
 
 
 // Turn the light on and off    
-// Bootstap plugin (Bootstaptoggle.com) (current does not work)
+// Bootstap plugin (Bootstaptoggle.com) (currently does not work)
     $(this).find(".toggleknapp").change(function(){
         console.log ($(this).siblings());
         console.log ($(this).prevAll(".lightbox"));
@@ -93,7 +93,7 @@ if (roomName.length > 10) {
                 
             }
             else {
-                $(this).siblings(".lightbox").css("background-color", "black");
+                $(this).siblings(".lightbox").css("background-color", "#3c3c3c");
                 $(this).css("background-color", "green");
                 $(this).html("ON");
                 tand="false";
