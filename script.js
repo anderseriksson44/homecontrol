@@ -6,7 +6,6 @@ $(document).ready(function() {
                 $(this).fadeTo("fast", 1);
             });
         });
-});
     
     
 //* jQuery function to to add a new light */
@@ -14,25 +13,25 @@ $(document).ready(function() {
     //Listen on the button that creates a new light //
 //    var lamp = document.getElementsByClassName("addLi");
 //    lamp.addEventListener("click", function (){
-        var testArray = [];
-        for (var i = 0; i < testArray.length; i++) {
-            var testNumber = i + 1;
-            // Create html string
-            var testlHTML = '<div class="ny collase">';
-            testHTML += '<hr><p>Ange namn på lampa</p>';
-            testHTML += '<input type="lightname" id="L'+ testArray[i]+'">';
-            testHTML += '<input class="addlight" type="button" value="Lägg till lampa">';
-            testHTML += '</div>';
-            };
-            console.log(testlHTML);
-//            document.getElementById("R1").appendChild(testlHTML);
-//            });
+//        var testArray = [];
+//        for (var i = 0; i < testArray.length; i++) {
+//            var testNumber = i + 1;
+//            // Create html string
+//            var testlHTML = '<div class="ny collase">';
+//            testHTML += '<hr><p>Ange namn på lampa</p>';
+//            testHTML += '<input type="lightname" id="L'+ testArray[i]+'">';
+//            testHTML += '<input class="addlight" type="button" value="Lägg till lampa">';
+//            testHTML += '</div>';
+//            };
+//            console.log(testlHTML);
+////            document.getElementById("R1").appendChild(testlHTML);
+////            });
     
             $("#light").on("change", function() {
             value = $("#light").val();
         
             });
-    $(document).find(".addlight").on("click", function(){
+        $(document).find(".addlight").on("click", function(){
         
          var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><h3>'+value+'</h3><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
         //Add it to the DOM
@@ -119,6 +118,8 @@ if (roomName.length > 10) {
                 }
             
     });
+    
+});
         
         
 //        var lampaDiv = $(this).parent().attr("id"); // Vi kollar om id på diven runt lampan är det samma
