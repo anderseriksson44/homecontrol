@@ -1,4 +1,4 @@
-# HTML/CSS/JavaScript and Webstandards - Final assignment
+# HTML/CSS/JavaScript - Final assignment
 
 ## HomeControl Application
 
@@ -13,8 +13,6 @@
 My intention with this project is to first of all use the knowledge from this course in HTML, CSS and Javascript, but also doing somthing that can grow over time and be improved with additional functionality as we proceed.
 The project is a Homecontrol application, where you should be able to manage your home remotely. E.g. turning on and off the lights, manage the alarm, your network/Wifi, etc.
 In this first version, I have focused on managing the light control being able visualise how you can turn lightswitches on and off in a particual room, but also add aditional lights to a room as well as adding additional rooms.
-
-#### The project consits of:
 
 #### Technologies used 
 
