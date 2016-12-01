@@ -58,185 +58,169 @@
 
     
 <!-- Main jumbotron for a primary marketing message or call to action -->
-    <section class="container">
-      <div class="jumbotron">
+<section class="container">
+  <div class="jumbotron">
         <img src="img/lamp_3.svg" height="200px" width="auto">
-          <h1 class="text-center">Din belysning</h1>
+        <h1 class="text-center">Din belysning</h1>
           
-          <!-- Hidden menu. Contains :"Add new room", ... -->
-          <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#installning" aria-expanded="false" aria-controls="collapseExample">Inställningar &raquo;</a></p>
-            <div class="collapse" id="installning">
-                
-                <!-- Hidden menu for adding of new room -->
-                <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href="#nyttrum" aria-expanded="false" aria-controls="nyttrum">Lägg till nytt rum</a>
-                    <div class="collapse" id="nyttrum">
-                        <hr><p>Ange namn på rummet</p>
-                        <input type="roomname" id="rum">                                    <!-- Input form to name the new room -->
-                        <input id="addroom" type="button" value="Lägg till rum">   <!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
-                    </div>
-                
-                <p id='result'></p>
+        <!-- Hidden menu. Contains :"Add new room", ... -->
+        <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#installning" aria-expanded="false" aria-controls="collapseExample">Inställningar &raquo;</a></p>
         
+        <div class="collapse" id="installning">
+            
+            <!-- Hidden menu for adding of new room -->
+            <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href="#nyttrum" aria-expanded="false" aria-controls="nyttrum">Lägg till nytt rum</a>
+            
+            <div class="collapse" id="nyttrum">
+                <hr><p>Ange namn på rummet</p>
+                <input type="roomname" id="rum">    <!-- Input form to name the new room -->
+                <input id="addroom" type="button" value="Lägg till rum">   <!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
-
-<!-- Dropdown meny for all lights in respecive room -->
-
 <section class="container">
-<!--      <div class="jumbotron"><h1>Ha koll på dina lampor</h1></div>-->
 
     <!--Bootstrap: Tab meny for each room -->
     <div id="tab1" class="jumbotron">	
     
    <!--Tabs UL-->
         <ul  id="rumlista" class="nav nav-pills">                              
-		
-  <!--Tabs LI for each room. Currently hardcoded-->
-            <li class="active"><a  href="#R1" data-toggle="tab">Vardagsrum</a>
-			</li>
-			<li><a href="#R2" data-toggle="tab">Sovrum</a>
-			</li>
-			<li><a href="#R3" data-toggle="tab">Kök</a>
-			 </li>
-              <li><a href="#R4" data-toggle="tab">Barnrum</a>
-              </li>
-		      <li><a href="#R5" data-toggle="tab">Utebelysning</a>
-			 </li>
-		  </ul>
+		<!--Tabs LI for each room. Currently hardcoded-->
+            <li class="active"><a  href="#R1" data-toggle="tab">Vardagsrum</a></li>
+            <li><a href="#R2" data-toggle="tab">Sovrum</a></li>
+            <li><a href="#R3" data-toggle="tab">Kök</a></li>
+            <li><a href="#R4" data-toggle="tab">Barnrum</a></li>
+            <li><a href="#R5" data-toggle="tab">Utebelysning</a></li>
+        </ul>
 
     <!--Bootstrap: Tab meny for each room -->
-        <div id="controlboard" class="tab-content clearfix"> 
+    <div id="controlboard" class="tab-content clearfix"> 
             
-            <!-- ROOM 1 -->
-                <div id="R1" class="tab-pane active" > <!--Tab 1. Content. Fade when changing between tabs --> 
-                    <h3>Dina lampor i vardagsrum</h3>
-<!--                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>-->
-                    <button class="addLi btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="ny">Lägg till lampa &raquo</button>
-                        
-<!--                    <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="ny">Lägg till lampa &raquo</a>-->
-                    <div class="ny collapse">
-                        <hr><p>Ange namn på lampa</p>
-                        <input type="lightname" id="light"> <!-- Input form to name the new light -->
-                        <input class="addlight" type="button" value="Lägg till lampa">   
+    <!-- ROOM 1 -->
+        <div id="R1" class="tab-pane active" > <!--Tab 1. Content. Fade when changing between tabs --> 
+            <h3>Dina lampor i vardagsrum</h3>
+            <button class="addLi btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="ny">Lägg till lampa &raquo</button>
+            
+            <div class="ny collapse">
+                <hr><p>Ange namn på lampa</p>
+                <input type="lightname" id="light"> <!-- Input form to name the new light -->
+                <input class="addlight" type="button" value="Lägg till lampa">   
                         <!-- Confirmation will call function to add a new light -->
+            </div>
+                    
+            <div class="container">
+                <div id="aa" class="room row">
+                
+                    <!-- One for each light -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 own text-center"> 
+                        <h3>Fönster norr</h3>
+                        <div class="lightbox"></div>
+                        
+<!-- On/Off toggle button. BootstrapToggle plugin used. Currently not working  -->
+<!--<input class="toggleknapp" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">-->
+                                
+                        <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
+                    </div>
+                        
+                            <!-- One for each light -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
+                        <h3>Fönster söder</h3>
+                        <div class="lightbox"></div>
+                            <!-- On/Off toggle button. -->
+                        <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
+                    </div>
+                            <!-- One for each light -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
+                        <h3>Taklampa</h3>
+                        <div class="lightbox"></div>
+                            <!-- On/Off toggle button. --> 
+                        <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
                     </div>
                     
-                    
-                    
-                    <div class="container">
-                        <div id="aa" class="room row">
-                            
-                            <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center"> 
-                                <h3>Fönster norr</h3>
-                                <div class="lightbox"></div>
-                                
-                                <!-- On/Off toggle button. BootstrapToggle plugin used.  -->
-<!--                                <input class="toggleknapp" data-toggle="toggle" type="checkbox" data-onstyle="success" data-offstyle="danger">-->
-                                
-                                <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
-                            </div>
-                            
-                            <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
-                                <h3>Fönster söder</h3>
-                                <div class="lightbox"></div>
-                                
-                                <!-- On/Off toggle button. -->
-                              <!--  <button id="L2" type="button" class="btn btn-md btn-success">  ON  </button> -->
-                            <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
- 
-                            </div>
-                            
-                                                        
-                            <!-- One for each light -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 own text-center">
-                                <h3>Taklampa</h3>
-                                <div class="lightbox"></div>
-                               
-                                <!-- On/Off toggle button. --> 
-                               <button type="button" class="lampknapp btn btn-md btn-success">  ON  </button>
-                            </div>
-                     
-                        </div>
-                    </div> 
                 </div>
-                            
-                <!-- ROOM 2 -->
-                <div id="R2" class="tab-pane fade">
-                    <h3>Dina lampor i sovrum</h3>
-                    
-                    <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="nylampa">Lägg till lampa &raquo</a>
-                    <div class=" ny collapse">
-                        <hr><p>Ange namn på lampa</p>
-                        <input type="lightname" id="light">                                    <!-- Input form to name the new room -->
-                      <input class="addlight" type="button" value="Lägg till lampa">
-<!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
-                    </div>
-                   
-                    <!-- One for each light -->
-                                      
-                    <div class="container">
-                        <div id="aa" class="room row"></div>
-                    </div>
-				</div>
-                
-                <!-- ROOM 3 -->
-                <div id="R3" class="tab-pane fade">
-                    <h3></h3>
-<!--                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>-->
-                    
-                    <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href="#nylampa" aria-expanded="false" aria-controls="nyttrum">Lägg till lampa &raquo</a>
-                    <div class="collapse" id="nylampa">
-                        <hr><p>Ange namn på lampa</p>
-                        <input type="lightname" id="light">                                    <!-- Input form to name the new room -->
-                        <input id="addlight" type="button" value="Lägg till lampa">   <!-- Confirmation will call function "nyrum() that will add a new list item/Tab -->
-                    </div>
-                    <!-- One for each light -->
-                            
-				</div>
-                
-                <!-- ROOM 4 -->
-                <div id="R4" class="tab-pane fade">
-                    <h3></h3>
-                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
-                    <!-- One for each light -->
-                            
-				</div>
-                
-                <!-- ROOM 5 -->
-                <div id="R5" class="tab-pane fade">
-                    <h3></h3>
-                    <button id="addlight" type="button" class="btn btn-md btn-primary">Lägg till lampa + </button>
-                    <!-- One for each light -->
-                            
-				</div> 
-                    <div id="roomaddModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog modal-sm">
-
-                            <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Some text in the modal.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        </div>	
-                    </div>
+            </div> 
         </div>
+                            
+        <!-- ROOM 2 -->
+        <div id="R2" class="tab-pane fade">
+            <h3>Dina lampor i sovrum</h3>
+            <a class="btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="nylampa">Lägg till lampa &raquo</a>
+            
+            <div class=" ny collapse">
+                <hr><p>Ange namn på lampa</p>
+                <input type="lightname" id="light">  <!-- Input form to name the new room -->
+                <input class="addlight" type="button" value="Lägg till lampa">
+            </div>
+                   
+            <!-- One for each light -->
+                                      
+            <div class="container">
+                <div id="aa" class="room row"></div>
+            </div>
+        </div>
+                
+        <!-- ROOM 3 -->
+        <div id="R3" class="tab-pane fade">
+            <h3></h3>
+            <button class="addLi btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="ny">Lägg till lampa &raquo</button>
+                        
+            <div class="ny collapse">
+                <hr><p>Ange namn på lampa</p>
+                <input type="lightname" id="light"> <!-- Input form to name the new light -->
+                <input class="addlight" type="button" value="Lägg till lampa">   
+                        <!-- Confirmation will call function to add a new light -->
+            </div>
+        </div>
+                
+        <!-- ROOM 4 -->
+        <div id="R4" class="tab-pane fade">
+            <h3></h3>
+            <button class="addLi btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="ny">Lägg till lampa &raquo</button>
+            
+            <div class="ny collapse">
+                <hr><p>Ange namn på lampa</p>
+                <input type="lightname" id="light"> <!-- Input form to name the new light -->
+                <input class="addlight" type="button" value="Lägg till lampa">   
+                        <!-- Confirmation will call function to add a new light -->
+            </div>                    
+        </div>
+                
+        <!-- ROOM 5 -->
+        <div id="R5" class="tab-pane fade">
+            <h3></h3>
+            <button class="addLi btn btn-primary btn-md" role="button" data-toggle="collapse" href=".ny" aria-expanded="false" aria-controls="ny">Lägg till lampa &raquo</button>
+            
+            <div class="ny collapse">
+                <hr><p>Ange namn på lampa</p>
+                <input type="lightname" id="light"> <!-- Input form to name the new light -->
+                <input class="addlight" type="button" value="Lägg till lampa">   
+                        <!-- Confirmation will call function to add a new light -->
+            </div>                    
+        </div> 
+        <div id="roomaddModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>	
+        </div>
+</div>
 
 </div>
 </section>
-
-
 
 
 </body>

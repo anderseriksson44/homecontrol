@@ -27,8 +27,8 @@ $(document).ready(function() {
 ////            document.getElementById("R1").appendChild(testlHTML);
 ////            });
     
-            $("#light").on("change", function() {
-            value = $("#light").val();
+        $("#light").on("change", function() {
+        value = $("#light").val();
         
             });
         $(document).find(".addlight").on("click", function(){
