@@ -1,17 +1,19 @@
 /* jQuery function to fade boxes at hover */
 $(document).ready(function() {
+    
     $(".box").on("mouseenter", function(){
         $(this).fadeTo("fast", 0.4);
         var text = $(this).children("h2").css("display", "block");
         text.animate({fontSize: '30pt'}, "slow");
-            $(this).on("mouseleave", function(){
-                $(this).fadeTo("fast", 1);
-                $(this).children("h2").css("display", "none");
-                $(this).children("h2").css("font-size", "10pt");
-                
-            });
+        
+        $(this).on("mouseleave", function(){
+            $(this).fadeTo("fast", 1);
+            $(this).children("h2").css("display", "none");
+            $(this).children("h2").css("font-size", "10pt");
         });
-
+    });
+});
+$(document).ready(function() {
     
 //* jQuery function to to add a ID to the room, when adding a new light */
     
