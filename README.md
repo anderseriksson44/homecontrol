@@ -60,7 +60,7 @@ Overall I am  satisfied with what I have created based on the knowledge I have l
 
 ### Contact info: a.eriksson44@gmail.com
 
-### [Linkedin](https://se.linkedin.com/in/anders-eriksson-76151a8a "Linkedin"
+### [Linkedin](https://se.linkedin.com/in/anders-eriksson-76151a8a "Linkedin")
 
 Enjoy my project!
 
