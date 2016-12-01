@@ -63,8 +63,26 @@ img{
 .text-color{
     color: #898787;
 }
+.hovertext {
+    display: none;
+    font-weight: bold;
+    font-size: 10pt;
+    color: white;
+    position: absolute; 
+    text-align: center;
+    width: 100%;
+    height: 0%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    background-color: black;
+}
 
 .box{
+    position: relative;
     width: 250px;
     height: 250px;
     background-color: #86a4c3;
@@ -125,13 +143,6 @@ img{
     background-color: #363636;
 }
 
-.portfolio-bg {
-    background-image: url(../img/header-bg.jpg)
-}
-
-.customer-bg {
-    background-image: url(../img/construction-1717893_960_720.jpg)
-}
 
 .inline{
     display: inline-block;
@@ -241,3 +252,6 @@ body {
     .footer {
         display: none;
     }
+.text-center {
+    
+}

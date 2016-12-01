@@ -86,7 +86,7 @@
     <div id="tab1" class="jumbotron">	
     
    <!--Tabs UL-->
-        <ul  id="rumlista" class="nav nav-pills">                              
+        <ul  id="rumlista" class="room nav nav-pills">                              
 		<!--Tabs LI for each room. Currently hardcoded-->
             <li class="active"><a  href="#R1" data-toggle="tab">Vardagsrum</a></li>
             <li><a href="#R2" data-toggle="tab">Sovrum</a></li>
@@ -105,9 +105,8 @@
             
             <div class="ny collapse">
                 <hr><p>Ange namn på lampa</p>
-                <input type="lightname" id="light"> <!-- Input form to name the new light -->
+                <input type="text" class="light">   
                 <input class="addlight" type="button" value="Lägg till lampa">   
-                        <!-- Confirmation will call function to add a new light -->
             </div>
                     
             <div class="container">
@@ -150,7 +149,7 @@
             
             <div class=" ny collapse">
                 <hr><p>Ange namn på lampa</p>
-                <input type="lightname" id="light">  <!-- Input form to name the new room -->
+                <input type="lightname" class="light">  <!-- Input form to name the new room -->
                 <input class="addlight" type="button" value="Lägg till lampa">
             </div>
                    

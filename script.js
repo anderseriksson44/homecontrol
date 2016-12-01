@@ -2,72 +2,67 @@
 $(document).ready(function() {
     $(".box").on("mouseenter", function(){
         $(this).fadeTo("fast", 0.4);
+        var text = $(this).children("h2").css("display", "block");
+        text.animate({fontSize: '30pt'}, "slow");
             $(this).on("mouseleave", function(){
                 $(this).fadeTo("fast", 1);
+                $(this).children("h2").css("display", "none");
+                $(this).children("h2").css("font-size", "10pt");
+                
             });
         });
+
     
+//* jQuery function to to add a ID to the room, when adding a new light */
     
-//* jQuery function to to add a new light */
-    
-    //Listen on the button that creates a new light //
-//    var lamp = document.getElementsByClassName("addLi");
-//    lamp.addEventListener("click", function (){
-//        var testArray = [];
+
+//var testArray = [];
+//var $(lamp) = document.getElementsByClassName("addLi");
+//lamp.addEventListener("click", function (){
+        
 //        for (var i = 0; i < testArray.length; i++) {
-//            var testNumber = i + 1;
-//            // Create html string
-//            var testlHTML = '<div class="ny collase">';
+//            var testHTML = '<div class="ny collase">';
 //            testHTML += '<hr><p>Ange namn på lampa</p>';
 //            testHTML += '<input type="lightname" id="L'+ testArray[i]+'">';
 //            testHTML += '<input class="addlight" type="button" value="Lägg till lampa">';
 //            testHTML += '</div>';
 //            };
-//            console.log(testlHTML);
-////            document.getElementById("R1").appendChild(testlHTML);
-////            });
+//            document.getElementById("R1").appendChild(testHTML);
+//        });
     
-        $("#light").on("change", function() {
-        value = $("#light").val();
+    $('.addlight').on('click', function(){
+        var ref_this = $("div.tab-pane").find("active");
+        console.log(ref_this.val);
+    });
+    
+    //* jQuery function to to add a new light */
+        $(".light").on("change", function() {
+            var value = $(".light").val();
+            
         
-            });
         $(document).find(".addlight").on("click", function(){
-        
-         var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><h3>'+value+'</h3><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
+             var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><h3>'+value+'</h3><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
         //Add it to the DOM
-        $(document).find("div.active").find(".room").append(domElement);
-        
-    }); 
+            $(document).find("div.active").find(".room").append(domElement);
+        }); 
+    });
     
-//    });
-//    function createAddlight(){
-//        
-//    };    
-//    
-//        
-//        var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
-//        console.log(this);
-//        //Add it to the DOM
-//        $(document).find("div.active").find(".room").append(domElement);
-//        console.log(this);        
-//    });
-//
-    
+
 /* Eventlistener for confirmation when adding a new room to the list */
 
 var rum = document.getElementById("addroom");
 rum.addEventListener("click", addaRoom, false);    
     
-
 /* Function that list called when a new room should be added to the tab-list*/
-
 function addaRoom() {
 var roomName = document.getElementById('rum').value; /* store name of room */
-var result = document.getElementById('result')
+
 
 if (roomName.length > 10) {
-    result.textContent = "För långt namn (max 10 tecken)";
+    this.textContent = "För långt namn (max 10 tecken)";
     alert("För långt namn (max 10 tecken)");
+} else if (roomName == "") {
+    alert("Du måste ange ett namn");
 } else {
     var ul = document.getElementById("rumlista");
     var list = document.createElement("li");
@@ -78,12 +73,12 @@ if (roomName.length > 10) {
     atag.setAttribute("data-toggle", "tab");
     atag.innerHTML= (roomName);
     list.appendChild(atag);
-    
+}
     var room = document.getElementsByClassName("tab-pane");
 //    var lastdiv = 
     
     };
-};
+});
     
 
 
@@ -119,8 +114,7 @@ if (roomName.length > 10) {
             
     });
     
-});
-        
+
         
 //        var lampaDiv = $(this).parent().attr("id"); // Vi kollar om id på diven runt lampan är det samma
 //        var lampKnappen= $(this).parent().attr("id");
