@@ -43,12 +43,12 @@ Overall I am  satisfied with what I have created based on the knowledge I have l
 * Add dimmer function to the lights by using a slider
 * Work a bit on the layout. Use images for the lights instead of boxes.
 * Other lightswithes
-
+* Possibility to remove rooms and lights from the list. Today only adding possible.
 
 #### Additional functionality to be added
 * Currently only the light control board is working. Next is to also add similar controlboards for the WiFi, temperature control, and survalience cameras and alarms
 
-* Connect the front end to a real backend system, but be able to actually control certain things. Longterm plan to connect to Tedus Tellstick, Raspberry Pi or similar.
+* Connect the frontend to a real backend system, to be able to actually control certain things. Longterm plan to connect to Telldus Tellstick, Raspberry Pi or similar.
 
 
 #### Website live at: https://anderseriksson44.github.io/homecontrol/
