@@ -15,39 +15,21 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     
-//* jQuery function to to add a ID to the room, when adding a new light */
     
 
-//var testArray = [];
-//var $(lamp) = document.getElementsByClassName("addLi");
-//lamp.addEventListener("click", function (){
-        
-//        for (var i = 0; i < testArray.length; i++) {
-//            var testHTML = '<div class="ny collase">';
-//            testHTML += '<hr><p>Ange namn på lampa</p>';
-//            testHTML += '<input type="lightname" id="L'+ testArray[i]+'">';
-//            testHTML += '<input class="addlight" type="button" value="Lägg till lampa">';
-//            testHTML += '</div>';
-//            };
-//            document.getElementById("R1").appendChild(testHTML);
-//        });
     
-    $('.addlight').on('click', function(){
-        var ref_this = $("div.tab-pane").find("active");
-        console.log(ref_this.val);
-    });
     
-    //* jQuery function to to add a new light */
-        $(".light").on("change", function() {
-            var value = $(".light").val();
-            
-        
-        $(document).find(".addlight").on("click", function(){
-             var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><h3>'+value+'</h3><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
-        //Add it to the DOM
-            $(document).find("div.active").find(".room").append(domElement);
-        }); 
-    });
+//Adding a new light to the room //
+    
+$(".addlight").on("click", function() {
+  var value = $('.light').val()    
+   var domElement = $('<div class="col-md-3 col-sm-6 own text-center"><h3>'+value+'</h3><div class="lightbox"></div><button type="button" class="lampknapp btn btn-md btn-success">  ON  </button></div>');
+    $(document).find("div.active").find(".room").append(domElement);
+    $(".light").val(null);
+});    
+    
+    
+ 
     
 
 /* Eventlistener for confirmation when adding a new room to the list */
